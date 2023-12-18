@@ -99,13 +99,13 @@ class _MyHomePageState extends State<_MyHomePage> {
               child: SfCartesianChart(
                   backgroundColor: Colors.white,
                   primaryXAxis: DateTimeAxis(
-                      visibleMinimum: DateTime(2016, 01, 8),
-                      visibleMaximum: DateTime(2016, 03, 16),
+                      initialVisibleMinimum: DateTime(2016, 01, 8),
+                      initialVisibleMaximum: DateTime(2016, 03, 16),
                       edgeLabelPlacement: EdgeLabelPlacement.shift,
                       intervalType: DateTimeIntervalType.days,
                       majorGridLines: MajorGridLines(width: 0)),
                   primaryYAxis: NumericAxis(interval: 4),
-                  series: <ChartSeries<ChartSampleData, DateTime>>[
+                  series: <CandleSeries<ChartSampleData, DateTime>>[
                     CandleSeries<ChartSampleData, DateTime>(
                       dataSource: chartData,
                       xValueMapper: (ChartSampleData sales, _) => sales.x,
